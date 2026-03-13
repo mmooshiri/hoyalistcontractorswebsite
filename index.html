@@ -14,6 +14,21 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 
 gtag('config', 'AW-16728099747');
+
+function trackConversion(url) {
+  var callback = function () {
+    if (typeof url !== 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-16728099747/1s0lCOaQ27sbEKOXyqg-',
+    'value': 1.0,
+    'currency': 'USD',
+    'event_callback': callback
+  });
+  return false;
+}
 </script>
 
 <style>
@@ -115,20 +130,15 @@ HoyaList helps contractors get discovered by homeowners looking for services lik
 
 <div class="download">
 
-<a class="button" 
+<a class="button"
 href="https://apps.apple.com/us/app/hoyalist/id6740706168"
-onclick="gtag('event', 'conversion', {'send_to': 'AW-16728099747/1s0lCOaQ27sbEKOXyqg-',
-      'value': 1.0,
-      'currency': 'USD'
-});">
+onclick="return trackConversion('https://apps.apple.com/us/app/hoyalist/id6740706168');">
 Download for iPhone
 </a>
 
-<a class="button" href="https://play.google.com/store/apps/details?id=com.hoyalist.hoyalist"
-onclick="gtag('event', 'conversion', {'send_to': 'AW-16728099747/1s0lCOaQ27sbEKOXyqg-',
-      'value': 1.0,
-      'currency': 'USD'
-});">
+<a class="button"
+href="https://play.google.com/store/apps/details?id=com.hoyalist.hoyalist"
+onclick="return trackConversion('https://play.google.com/store/apps/details?id=com.hoyalist.hoyalist');">
 Get it on Android
 </a>
 
@@ -207,11 +217,15 @@ Download HoyaList and create your contractor profile today.
 
 <div class="download">
 
-<a class="button" href="https://apps.apple.com/us/app/hoyalist/id6740706168">
+<a class="button"
+href="https://apps.apple.com/us/app/hoyalist/id6740706168"
+onclick="return trackConversion('https://apps.apple.com/us/app/hoyalist/id6740706168');">
 Download on App Store
 </a>
 
-<a class="button" href="https://play.google.com/store/apps/details?id=com.hoyalist.hoyalist">
+<a class="button"
+href="https://play.google.com/store/apps/details?id=com.hoyalist.hoyalist"
+onclick="return trackConversion('https://play.google.com/store/apps/details?id=com.hoyalist.hoyalist');">
 Download on Google Play
 </a>
 
